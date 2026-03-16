@@ -6,8 +6,8 @@ class CountryWeatherTests(TestCase):
     def setUp(self):
         self.client = APIClient()
 
-    @patch('core.services.country_client.CountryClient.get_by_name')
-    @patch('core.services.weather_client.WeatherClient.get_by_city')
+    @patch('weather.services.CountryClient.get_by_name')
+    @patch('weather.services.WeatherClient.get_by_city')
     def test_combined_endpoint(self, mock_weather, mock_country):
         mock_country.return_value = [{
             "name": {"common": "Philippines"},
