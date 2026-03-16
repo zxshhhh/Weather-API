@@ -126,7 +126,7 @@ REST_FRAMEWORK = {
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
     'DEFAULT_VERSION': 'v1',
     'ALLOWED_VERSIONS': ['v1'],
-    'EXCEPTION_HANDLER': 'core.views.custom_exception_handler',
+    'EXCEPTION_HANDLER': 'weather.views.custom_exception_handler',
 }
 
 SPECTACULAR_SETTINGS = {

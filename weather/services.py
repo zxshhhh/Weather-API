@@ -10,6 +10,8 @@ class CountryClient:
     def get_by_name(name: str):
         try:
             response = requests.get(f"{CountryClient.BASE_URL}/name/{name}", timeout=10)
+            if response.status_code == 404:
+                return []
             response.raise_for_status()
             return response.json()  # list of countries
         except requests.exceptions.RequestException as e:
@@ -27,6 +29,8 @@ class WeatherClient:
                 "units": units,
             }
             response = requests.get(WeatherClient.BASE_URL, params=params, timeout=10)
+            if response.status_code == 404:
+                return []
             response.raise_for_status()
             return response.json()
         except requests.exceptions.RequestException as e:
