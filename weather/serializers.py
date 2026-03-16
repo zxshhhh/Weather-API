@@ -9,7 +9,7 @@ class CountrySerializer(serializers.Serializer):
 
 class WeatherSerializer(serializers.Serializer):
     temperature = serializers.FloatField(source='main.temp')
-    description = serializers.SerializerMethodField()   # ← FIXED
+    description = serializers.SerializerMethodField()
     humidity = serializers.IntegerField(source='main.humidity')
     wind_speed = serializers.FloatField(source='wind.speed')
 
